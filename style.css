@@ -1,0 +1,588 @@
+/* Загальні стилі */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+    background-color: #ffffff;
+}
+
+/* Сіра плашка зверху */
+.top-bar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: #636361;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+}
+
+.initials {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    padding-right: 15px;
+    border-right: 1px solid rgba(255,255,255,0.5);
+}
+
+.date {
+    padding-left: 15px;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.navigation a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    transition: opacity 0.3s ease;
+}
+
+.navigation a:hover {
+    opacity: 0.7;
+}
+
+/* Великий заголовок */
+.main-title {
+    text-align: center;
+    padding: 60px 0;
+    background: white;
+}
+
+.main-title h1 {
+    font-size: 70px;
+    font-weight: 300;
+    letter-spacing: 15px;
+    margin: 0;
+}
+
+/* ГЛАВНАЯ СТРАНИЦА: КАРТИНКА С ЦВЕТАМИ */
+.invitation-image {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('flowers-bg.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.invitation-image::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.25);
+    z-index: 1;
+}
+
+.hero-text-inside {
+    position: relative;
+    z-index: 2;
+    color: white;
+    padding: 20px;
+}
+
+.hero-greeting {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.hero-date {
+    font-family: 'Lato', sans-serif;
+    font-size: 22px;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+}
+
+.hero-location {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+/* Сетки для карточек на главной */
+.story-details-grid, .rsvp-registry-grid {
+    display: flex;
+    width: 100%;
+    height: 600px;
+}
+
+.rsvp-registry-grid {
+    background-color: white;
+    padding-top: 20px;
+}
+
+.grid-item {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.item-story { background: url('story.jpg') no-repeat center center; background-size: cover; }
+.item-details { background: url('details.jpg') no-repeat center center; background-size: cover; }
+.item-rsvp { background: url('rsvp_bg.jpg') no-repeat center center; background-size: cover; margin-right: 10px; }
+.item-registry { background: url('registry_bg.jpg') no-repeat center center; background-size: cover; margin-left: 10px; }
+
+.overlay-text {
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    border-bottom: 2px solid white;
+    padding-bottom: 5px;
+    transition: transform 0.3s ease;
+    z-index: 2;
+}
+
+.grid-item:hover .overlay-text { transform: scale(1.1); }
+.grid-item::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease;
+    z-index: 1;
+}
+.grid-item:hover::before { background: rgba(0, 0, 0, 0.4); }
+
+/* СТИЛІ СТОРІНКИ "OUR STORY" (СТРОГО НА БІЛОМУ ФОНІ) */
+.our-story-page-section {
+    padding: 40px 20px 80px 20px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.story-container {
+    max-width: 550px; /* Акуратна ширина контенту по центру */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Ефект Полароїда (великі, чисті рамки, відступи знизу залишені під стиль) */
+.polaroid-wrapper {
+    background: #ffffff;
+    padding: 16px 16px 50px 16px; /* Класичне широке поле полароїда знизу */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    border: 1px solid #eaeaea;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 460px; /* Робимо їх великими по центру */
+}
+
+.polaroid-photo {
+    width: 100%;
+    overflow: hidden;
+}
+
+.polaroid-photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.main-polaroid-top {
+    margin-bottom: 50px;
+}
+
+.main-polaroid-bottom {
+    margin: 50px 0;
+}
+
+/* Текстові стилі */
+.story-main-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    color: #636361;
+    text-transform: uppercase;
+    margin-bottom: 35px;
+}
+
+.story-text-content p {
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #4a4a4a;
+    font-weight: 300;
+    margin-bottom: 25px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.story-footer-content p {
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #4a4a4a;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.story-footer-content .onward-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-style: italic;
+    color: #636361;
+    margin-bottom: 40px;
+}
+
+/* Коричнева кнопка RSVP */
+.story-rsvp-button {
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: #ffffff !important;
+    background-color: #797163 !important; /* Приглушений коричневий колір з макету */
+    text-decoration: none !important;
+    text-transform: uppercase;
+    padding: 14px 70px;
+    border-radius: 40px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.story-rsvp-button:hover {
+    background-color: #5f584d !important;
+}
+
+/* СЕКЦІЯ REGISTRY НА ГОЛОВНІЙ */
+.registry-full-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: url('registry-bg.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    clear: both;
+}
+
+.registry-full-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.15); 
+    z-index: 1;
+}
+
+.registry-content-overlay {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    width: 100%;
+    padding: 40px 20px;
+}
+
+.registry-section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    color: #ffffff;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.registry-section-desc {
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    line-height: 1.8;
+    color: #ffffff;
+    margin-bottom: 50px;
+    font-weight: 300;
+}
+
+.registry-brown-button {
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: #ffffff !important;
+    background-color: #797163 !important;
+    text-decoration: none !important;
+    text-transform: uppercase;
+    padding: 16px 50px;
+    border-radius: 40px; 
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+/* БЕЖЕВИЙ БЛОК В САМОМУ НИЗУ */
+.bottom-date-beige-block {
+    width: 100%;
+    background-color: #E6DDD6;
+    padding: 110px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+    clear: both;
+}
+
+.date-beige-content {
+    max-width: 850px;
+    width: 100%;
+}
+
+.wedding-date-line-1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+    font-style: italic;
+    color: #636361;
+    margin: 0 0 10px 0;
+}
+
+.wedding-date-line-2 {
+    font-family: 'Lato', sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: 4px;
+    color: #636361;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    .main-title h1 { font-size: 35px; letter-spacing: 5px; }
+    .top-bar { position: static; flex-direction: column; gap: 10px; padding: 20px; }
+    .navigation a { margin: 0 10px; }
+    .polaroid-wrapper { max-width: 100%; }
+    .story-text-content p { text-align: center; }
+    .story-details-grid, .rsvp-registry-grid { flex-direction: column; height: auto; }
+    .grid-item { height: 400px; margin: 5px 0 !important; }
+    .registry-full-section { min-height: 600px; }
+}
+/* ==========================================================================
+   СТИЛІ ДЛЯ СТОРІНКИ "THE DETAILS"
+   ========================================================================== */
+
+/* Великі фонові банери для деталей */
+.details-hero-section {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    background: url('details-hero.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.travel-hero-section {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    background: url('travel-hero.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.details-hero-overlay, .travel-hero-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.15); /* Легке затемнення */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.details-main-title, .travel-main-title {
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+/* Контентна частина */
+.details-page-content {
+    background-color: #ffffff;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Коричнева картка з текстом */
+.details-rsvp-card {
+    background-color: #797163; /* Приглушений хакі-коричневий колір з макету */
+    max-width: 750px;
+    width: 100%;
+    padding: 60px 50px;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 50px;
+}
+
+.details-card-text {
+    font-family: 'Playfair Display', serif;
+    color: #ffffff;
+    font-size: 20px;
+    line-height: 1.8;
+    margin: 0 0 40px 0;
+}
+
+.details-card-rsvp-btn {
+    font-family: 'Lato', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: #797163 !important;
+    background-color: #E6DDD6 !important; /* Бежева кнопка всередині */
+    text-decoration: none !important;
+    text-transform: uppercase;
+    padding: 14px 50px;
+    border-radius: 40px;
+    display: inline-block;
+    transition: opacity 0.3s ease;
+}
+
+.details-card-rsvp-btn:hover {
+    opacity: 0.9;
+}
+
+/* Середнє фото будівлі */
+.details-middle-photo {
+    max-width: 750px;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.details-middle-photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 40px 40px 0 0; /* Округлення зверху як на оригінальних картках, якщо хочеш */
+}
+
+/* Двоколонкова інфо-сітка */
+.details-info-grid {
+    max-width: 750px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    padding-bottom: 40px;
+}
+
+.info-column {
+    flex: 1;
+}
+
+.info-column h3 {
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: #8c8c8c;
+    text-transform: uppercase;
+    margin: 25px 0 5px 0;
+    letter-spacing: 1px;
+}
+
+.info-column p {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333333;
+    margin: 0 0 20px 0;
+}
+
+/* СЕКЦІЯ TRAVEL БЛОКІВ (Шахівниця) */
+.travel-blocks-section {
+    background-color: #ffffff;
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.travel-container {
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.travel-row {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+}
+
+/* Розворот для другої стрічки */
+.row-reverse {
+    flex-direction: row-reverse;
+}
+
+.travel-text-block {
+    flex: 1;
+    background-color: #f7f5f2; /* Легкий світло-сірий/бежевий фон для блоку тексту */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 50px;
+    box-sizing: border-box;
+}
+
+.travel-text-block p {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #4a4a4a;
+    text-align: center;
+    margin: 0;
+}
+
+.travel-image-block {
+    flex: 1;
+    overflow: hidden;
+}
+
+.travel-image-block img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Щоб картинка повністю заповнювала свій блок */
+    display: block;
+}
+
+/* Екранна адаптивність під мобільні */
+@media (max-width: 768px) {
+    .details-hero-section, .travel-hero-section { height: 40vh; }
+    .details-main-title, .travel-main-title { font-size: 28px; }
+    .details-rsvp-card { padding: 35px 20px; }
+    .details-card-text { font-size: 16px; }
+    .details-info-grid { flex-direction: column; gap: 10px; text-align: center; }
+    .travel-row, .row-reverse { flex-direction: column; }
+    .travel-image-block { height: 300px; }
+}
