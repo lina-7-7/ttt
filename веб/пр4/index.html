@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Інтерактивні елементи</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Мій Інтерфейс</h1>
+        <div class="dropdown">
+            <button id="dropdownBtn">Menu ▾</button>
+            <div class="dropdown-menu" id="dropdownMenu">
+                <a href="#modal-sec">Модальне вікно</a>
+                <a href="#gallery-sec">Галерея</a>
+                <a href="#form-sec">Форма зв'язку</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <section id="modal-sec">
+            <h2>1. Спливаюче модальне вікно</h2>
+            <button id="openModal">Відкрити модальне вікно</button>
+        </section>
+
+        <section id="gallery-sec">
+            <h2>2. Інтерактивна галерея</h2>
+            <div class="gallery-main">
+                <img id="mainImage" src="pic1.png" alt="Основне зображення">
+            </div>
+            <div class="gallery-thumbs">
+                <div class="thumb active" data-src="pic1.png">
+                    <img src="pic1.png" alt="Мініатюра 1">
+                </div>
+                <div class="thumb" data-src="pic2.png">
+                    <img src="pic2.png" alt="Мініатюра 2">
+                </div>
+                <div class="thumb" data-src="pic3.png">
+                    <img src="pic3.png" alt="Мініатюра 3">
+                </div>
+            </div>
+        </section>
+
+        <section id="form-sec">
+            <h2>3. Форма зворотного зв'язку</h2>
+            <form id="feedbackForm" novalidate>
+                <div class="form-group">
+                    <label for="username">Ім'я (мінімум 3 символи)</label>
+                    <input type="text" id="username" name="username">
+                    <div class="error-message">Ім'я повинно містити не менше 3 символів.</div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Електронна пошта</label>
+                    <input type="email" id="email" name="email">
+                    <div class="error-message">Введіть коректну адресу електронної пошти.</div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Повідомлення</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                    <div class="error-message">Повідомлення не може бути порожнім.</div>
+                </div>
+                <button type="submit">Надіслати</button>
+            </form>
+            <div class="form-success" id="formSuccess">Дякуємо! Ваше повідомлення успішно надіслано.</div>
+        </section>
+
+    </div>
+
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <button class="close-modal" id="closeModal">&times;</button>
+            <h3>Модальне вікно</h3>
+            <p style="margin-top: 1rem;">Це приклад інтерактивного модального вікна. Клацніть на хрестик або поза вікном, щоб закрити його.</p>
+        </div>
+    </div>
+
+    <a href="#" class="scroll-to-top" id="scrollTopBtn" title="Вгору">▲</a>
+
+    <script src="script.js"></script>
+</body>
+</html>
