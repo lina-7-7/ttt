@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Розробка структури веб-сторінки з використанням семантичних тегів.">
+    <title>Семантична структура</title>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="/" aria-label="Головна сторінка бренду">
+                <img src="logo.png" alt="Логотип компанії" width="150" height="50">
+            </a>
+        </div>
+        
+        <nav aria-label="Головна навігація">
+            <ul>
+                <li><a href="#home">Головна</a></li>
+                <li><a href="#articles">Статті</a></li>
+                <li><a href="#about">Про нас</a></li>
+                <li><a href="#services">Послуги</a></li>
+                <li><a href="#contacts">Контакти</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        
+        <section id="articles" aria-labelledby="main-articles-title">
+            <h2 id="main-articles-title">Список статей</h2>
+
+            <article>
+                <h3>Основи семантичної розмітки HTML5</h3>
+                <p>Семантичні теги надають смислове значення структурним елементам сторінки. Вони допомагають пошуковим роботам краще розуміти вміст та структуру сайту.</p>
+            </article>
+
+            <article>
+                <h3>Доступність веб-інтерфейсів</h3>
+                <p>Використання правильної вкладеності тегів та спеціальних атрибутів доступності дозволяє забезпечити зручне користування сайтом для всіх категорій користувачів.</p>
+            </article>
+
+            <article>
+                <h3>Оптимізація та просування сайтів</h3>
+                <p>Сучасна семантична структура документа є базовим етапом внутрішньої SEO-оптимізації, забезпечуючи кращу індексацію сторінок пошуковими системами.</p>
+            </article>
+        </section>
+
+        <aside aria-label="Бічна панель">
+            
+            <section class="search-widget" aria-label="Пошук по сайту">
+                <h3>Пошук</h3>
+                <form action="/search" method="get">
+                    <label for="search-field">Введіть запит:</label>
+                    <input type="search" id="search-field" name="q" placeholder="Шукати..." required>
+                    <button type="submit">Знайти</button>
+                </form>
+            </section>
+
+            <section class="social-widget" aria-label="Соціальні мережі">
+                <h3>Соціальні мережі</h3>
+                <ul>
+                    <li><a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a></li>
+                    <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+                    <li><a href="https://twitter.com" target="_blank" rel="noopener">Twitter</a></li>
+                </ul>
+            </section>
+        </aside>
+
+    </main>
+
+    <footer>
+        <div class="contacts-info">
+            <h3>Контакти</h3>
+            <address>
+                <p>Телефон: <a href="tel:+380441234567">+380 (44) 123-45-67</a></p>
+                <p>Email: <a href="mailto:info@example.com">info@example.com</a></p>
+            </address>
+        </div>
+
+        <div class="copyright">
+            <p>&copy; 2026 Усі права захищено. Семантична структура.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
